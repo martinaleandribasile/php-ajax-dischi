@@ -5,6 +5,8 @@ const app = new Vue({
     data() {
         return {
             cdarray: [],
+            valuegenre: '',
+            genreselected: 'all'
         };
     },
     mounted() {
@@ -12,9 +14,21 @@ const app = new Vue({
         axios
             .get('dischifile.php')
             .then((result) => {
-                console.log(result.data);
                 this.cdarray = result.data;
             })
             .catch((e) => console.log(e));
     },
+    methods: {
+        filterGenre() {
+            this.valuegenre = this.genreselected
+            console.log(this.valuegenre)
+            axios
+                .get('dischifile.php?genre=' + this.valuegenre)
+                .then((result) => {
+                    console.log(result.data);
+                    this.cdarray = result.data;
+                })
+                .catch((e) => console.log(e));
+        }
+    }
 });

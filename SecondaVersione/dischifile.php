@@ -73,6 +73,15 @@ $disks = [
     ],
 ];
 
-header('Content-Type: application/json');
-
-echo json_encode($disks);
+$genre = isset($_GET['genre']) ? $_GET['genre'] : "all";
+$cdfilterd = [];
+if ($genre === "all") {
+    $cdfilterd = $disks;
+} else {
+    foreach ($disks as $cd) {
+        if ($cd["genre"] == $genre)
+            $cdfilterd[] = $cd;
+    }
+}
+header("content-type: application/json");
+echo json_encode($cdfilterd);
