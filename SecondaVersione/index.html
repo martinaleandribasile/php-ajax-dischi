@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.13/vue.min.js"
+        integrity="sha512-9PmLIATEd4w0OxdTHq61p12lQqa8OtDC6nXu0+S1Icb800oxoADle+gaPfmAXLa35KSvk/6bGeNRfi3nq0Hvvw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Lista Studenti</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <title>DISCHI</title>
+</head>
+
+<body>
+    <div id="app" class="h100">
+        <header>
+            <div class="header">
+                <div class="containerlogo">
+                    <img src="https://ajourneyintosound.de/wp-content/uploads/2019/02/spotify_logo.png" alt="">
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="card" v-for="element in cdarray">
+                    <img :src="element.poster" alt="">
+                    <h3 class="title">{{element.title}}</h3>
+                    <div class="info">
+                        <div>{{element.author}}</div>
+                        <div>{{element.year}}</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
