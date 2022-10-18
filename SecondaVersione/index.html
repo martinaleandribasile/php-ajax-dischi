@@ -25,7 +25,7 @@
                     <img src="https://ajourneyintosound.de/wp-content/uploads/2019/02/spotify_logo.png" alt="">
                 </div>
                 <form action="dischifile.php" method='get'>
-                    <select name="genere" id="" @change="filterGenre" v-model="genreselected">
+                    <select name="genere" id="" @change="filterGenre($event)">
                         <option value="all">All</option>
                         <option value="Jazz">Jazz</option>
                         <option value="Metal">Metal</option>

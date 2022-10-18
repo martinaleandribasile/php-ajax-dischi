@@ -6,7 +6,6 @@ const app = new Vue({
         return {
             cdarray: [],
             valuegenre: '',
-            genreselected: 'all'
         };
     },
     mounted() {
@@ -19,8 +18,8 @@ const app = new Vue({
             .catch((e) => console.log(e));
     },
     methods: {
-        filterGenre() {
-            this.valuegenre = this.genreselected
+        filterGenre(e) {
+            this.valuegenre = e.target.value
             console.log(this.valuegenre)
             axios
                 .get('dischifile.php?genre=' + this.valuegenre)
